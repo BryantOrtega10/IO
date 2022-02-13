@@ -8,11 +8,11 @@ m = GEKKO(remote=False)
 x1 = m.Var(lb=0)
 x2 = m.Var(lb=0)
 #Se indica la funcion objetivo y que se desea hacer si Maximizar o Minimizar
-m.Minimize(3*x1+5*x2)
+m.Minimize(x1+x2)
 #Se agregan las inecuaciones y ecuaciones al objeto gekko
-m.Equation(4*x1+5*x2==20)
-m.Equation(x1+x2>=3)
-m.Equation(2*x1+5*x2<=16)
+m.Equation(5*x1+3*x2>=45)
+m.Equation(3*x1+2*x2>=34)
+m.Equation(x1+4*x2==20)
 #Orden para iniciar a resolver el sistema
 m.solve(disp=False)
 #Se almacenan los resultados en variables
